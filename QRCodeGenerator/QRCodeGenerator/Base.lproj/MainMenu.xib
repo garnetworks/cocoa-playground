@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11542" systemVersion="16C67" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="Voe-Tx-rLC" id="GzC-gU-4Uq"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
+            <connections>
+                <outlet property="btnSave" destination="Akr-6T-cDP" id="UFT-VW-vHO"/>
+                <outlet property="imageView" destination="nX3-aW-bRo" id="eto-0q-pGI"/>
+                <outlet property="progressIndicator" destination="w7K-Ji-Ohk" id="Wd7-sQ-MTm"/>
+                <outlet property="textViewContent" destination="uNa-VN-OgB" id="4rW-BN-uiY"/>
+                <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
+            </connections>
+        </customObject>
+        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
+            <items>
+                <menuItem title="QRCodeGenerator" id="1Xt-HY-uBw">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="QRCodeGenerator" systemMenu="apple" id="uQy-DD-JDr">
+                        <items>
+                            <menuItem title="About QRCodeGenerator" id="5kV-Vb-QxS">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="orderFrontStandardAboutPanel:" target="-1" id="Exp-CZ-Vem"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
+                            <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
+                            <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
+                            <menuItem title="Services" id="NMo-om-nkz">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
+                            <menuItem title="Hide QRCodeGenerator" keyEquivalent="h" id="Olw-nP-bQN">
+                                <connections>
+                                    <action selector="hide:" target="-1" id="PnN-Uc-m68"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Hide Others" keyEquivalent="h" id="Vdr-fp-XzO">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="hideOtherApplications:" target="-1" id="VT4-aY-XCT"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Show All" id="Kd2-mp-pUS">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="unhideAllApplications:" target="-1" id="Dhg-Le-xox"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
+                            <menuItem title="Quit QRCodeGenerator" keyEquivalent="q" id="4sb-4s-VLi">
+                                <connections>
+                                    <action selector="terminate:" target="-1" id="Te7-pn-YzF"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+            </items>
+        </menu>
+        <window title="QRCodeGenerator" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="335" y="390" width="583" height="326"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+            <value key="minSize" type="size" width="477" height="291"/>
+            <view key="contentView" id="EiT-Mj-1SZ">
+                <rect key="frame" x="0.0" y="0.0" width="583" height="326"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <box horizontalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="juv-lA-HuA">
+                        <rect key="frame" x="324" y="20" width="5" height="286"/>
+                    </box>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kvB-ka-yGH">
+                        <rect key="frame" x="404" y="13" width="98" height="32"/>
+                        <buttonCell key="cell" type="push" title="Generate" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dki-Jt-EgX">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" size="13" name=".PingFangSC-Regular"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="generate:" target="Voe-Tx-rLC" id="7vf-aK-Cbt"/>
+                        </connections>
+                    </button>
+                    <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="w7K-Ji-Ohk">
+                        <rect key="frame" x="155" y="155" width="16" height="16"/>
+                    </progressIndicator>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nX3-aW-bRo" customClass="QRImageView">
+                        <rect key="frame" x="20" y="20" width="286" height="286"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="nX3-aW-bRo" secondAttribute="height" multiplier="1:1" id="S3r-Hs-xmq"/>
+                        </constraints>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" id="19M-MQ-xKY"/>
+                    </imageView>
+                    <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SrE-kw-A1n">
+                        <rect key="frame" x="335" y="61" width="228" height="245"/>
+                        <clipView key="contentView" id="Aa7-Ue-O1K">
+                            <rect key="frame" x="1" y="1" width="226" height="243"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textView importsGraphics="NO" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="uNa-VN-OgB">
+                                    <rect key="frame" x="0.0" y="0.0" width="226" height="243"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <size key="minSize" width="226" height="243"/>
+                                    <size key="maxSize" width="463" height="10000000"/>
+                                    <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </clipView>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="rcK-r8-PSF">
+                            <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="ZcU-cK-s8P">
+                            <rect key="frame" x="211" y="1" width="16" height="243"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Akr-6T-cDP">
+                        <rect key="frame" x="498" y="13" width="71" height="32"/>
+                        <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sXe-k0-yjr">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" size="13" name=".PingFangSC-Regular"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="save:" target="Voe-Tx-rLC" id="uuQ-Am-2Sr"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Akr-6T-cDP" secondAttribute="bottom" constant="20" id="4ci-9V-HiY"/>
+                    <constraint firstAttribute="trailing" secondItem="Akr-6T-cDP" secondAttribute="trailing" constant="20" id="7ug-yp-cKA"/>
+                    <constraint firstAttribute="bottom" secondItem="nX3-aW-bRo" secondAttribute="bottom" constant="20" id="Ofm-i4-rgB"/>
+                    <constraint firstItem="SrE-kw-A1n" firstAttribute="leading" secondItem="juv-lA-HuA" secondAttribute="trailing" constant="8" id="OiX-Re-elg"/>
+                    <constraint firstItem="w7K-Ji-Ohk" firstAttribute="centerX" secondItem="nX3-aW-bRo" secondAttribute="centerX" id="Oud-qX-TOR"/>
+                    <constraint firstItem="Akr-6T-cDP" firstAttribute="leading" secondItem="kvB-ka-yGH" secondAttribute="trailing" constant="8" id="OvD-el-ejB"/>
+                    <constraint firstItem="Akr-6T-cDP" firstAttribute="top" secondItem="SrE-kw-A1n" secondAttribute="bottom" constant="20" id="PXK-6M-wHO"/>
+                    <constraint firstAttribute="trailing" secondItem="SrE-kw-A1n" secondAttribute="trailing" constant="20" id="Qqh-Z7-Paf"/>
+                    <constraint firstAttribute="bottom" secondItem="kvB-ka-yGH" secondAttribute="bottom" constant="20" id="cSa-2v-d1v"/>
+                    <constraint firstItem="juv-lA-HuA" firstAttribute="leading" secondItem="nX3-aW-bRo" secondAttribute="trailing" constant="20" id="cxk-5M-9UA"/>
+                    <constraint firstItem="nX3-aW-bRo" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" id="eYT-MO-sWu"/>
+                    <constraint firstItem="juv-lA-HuA" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" id="lBo-4W-ghM"/>
+                    <constraint firstAttribute="bottom" secondItem="juv-lA-HuA" secondAttribute="bottom" constant="20" id="oUH-0O-YKQ"/>
+                    <constraint firstItem="w7K-Ji-Ohk" firstAttribute="centerY" secondItem="nX3-aW-bRo" secondAttribute="centerY" id="qIN-5s-Mtj"/>
+                    <constraint firstItem="SrE-kw-A1n" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" id="tJy-PS-QnP"/>
+                    <constraint firstItem="nX3-aW-bRo" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="y0a-mi-YGm"/>
+                </constraints>
+            </view>
+            <point key="canvasLocation" x="340.5" y="446"/>
+        </window>
+        <userDefaultsController representsSharedInstance="YES" id="geF-6A-FBB"/>
+    </objects>
+</document>
